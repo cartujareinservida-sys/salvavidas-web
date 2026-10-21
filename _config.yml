@@ -1,0 +1,3 @@
+# Configuración de GitHub Pages: no publicar las notas internas
+exclude:
+  - CLAUDE.md
