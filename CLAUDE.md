@@ -73,4 +73,5 @@ Marca: **Salva Vidas**. Diseño limpio, de dos colores: azul marino y blanco.
 - [ ] Servicio de formularios para el contacto (ahora abre el correo del visitante)
 - [ ] Logo y fotos propias
 - [ ] Tarifas o modalidades
+- [ ] Comprar el dominio salvavidasadicciones.es y volver a crear el archivo `CNAME` (se quitó para publicar en https://cartujareinservida-sys.github.io/salvavidas-web/)
 - [ ] Imagen para compartir en redes (og:image, 1200×630)
