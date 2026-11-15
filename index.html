@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ayuda en adicciones en Arcos de la Frontera | Salva Vidas</title>
   <meta name="description" content="Acompañamiento a personas con adicción y a sus familias en Arcos de la Frontera (Cádiz): asesoramiento y charlas terapéuticas. Llama al 604 887 687.">
-  <link rel="canonical" href="https://www.salvavidasadicciones.es/">
+  <link rel="canonical" href="https://cartujareinservida-sys.github.io/salvavidas-web/">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#1A365D">
 
@@ -15,8 +15,8 @@
   <meta property="og:site_name" content="Salva Vidas">
   <meta property="og:title" content="Ayuda en adicciones en Arcos de la Frontera | Salva Vidas">
   <meta property="og:description" content="Acompañamiento, asesoramiento y charlas terapéuticas para personas con adicción y sus familias. Sin juicios y con experiencia vivida.">
-  <meta property="og:url" content="https://www.salvavidasadicciones.es/">
-  <!-- TODO: añadir una imagen para compartir (1200×630): <meta property="og:image" content="https://www.salvavidasadicciones.es/img/compartir.jpg"> -->
+  <meta property="og:url" content="https://cartujareinservida-sys.github.io/salvavidas-web/">
+  <!-- TODO: añadir una imagen para compartir (1200×630): <meta property="og:image" content="https://cartujareinservida-sys.github.io/salvavidas-web/img/compartir.jpg"> -->
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231A365D'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='700' font-size='16' fill='white' text-anchor='middle'%3ESV%3C/text%3E%3C/svg%3E">
@@ -27,10 +27,10 @@
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "@id": "https://www.salvavidasadicciones.es/#negocio",
+    "@id": "https://cartujareinservida-sys.github.io/salvavidas-web/#negocio",
     "name": "Salva Vidas",
     "description": "Acompañamiento a personas con adicción y a sus familias en Arcos de la Frontera (Cádiz): asesoramiento, información y charlas terapéuticas.",
-    "url": "https://www.salvavidasadicciones.es/",
+    "url": "https://cartujareinservida-sys.github.io/salvavidas-web/",
     "telephone": "+34604887687",
     "email": "salvadorreinservida@icloud.com",
     "priceRange": "€€",
@@ -70,6 +70,7 @@
   }
   </script>
   <script src="script.js" defer></script>
+  <script src="bot/widget.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Saltar al contenido</a>
@@ -102,7 +103,7 @@
           </a>
           <a class="btn btn--ghost" href="#contacto">Escríbeme</a>
         </div>
-        <p class="hero__note">Primera conversación sin compromiso y confidencial.</p>
+        <p class="hero__note">Primera conversación sin compromiso y confidencial. ¿Prefieres escribir? <a href="#chat" data-chat-open>Habla con el asistente</a>.</p>
       </div>
     </section>
 
@@ -188,7 +189,7 @@
           </div>
           <div class="field">
             <label for="contacto-dato">Teléfono o email</label>
-            <input id="contacto-dato" name="contacto" type="text" autocomplete="email" required>
+            <input id="contacto-dato" name="contacto" type="text" autocomplete="on" required>
           </div>
           <div class="field">
             <label for="perfil">Soy…</label>
@@ -205,7 +206,7 @@
           </div>
           <label class="check">
             <input type="checkbox" name="privacidad" required>
-            <span>Acepto que mis datos se usen solo para responder a mi consulta, según la política de privacidad.</span>
+            <span>Acepto que mis datos se usen solo para responder a mi consulta, según la <a href="privacidad.html">política de privacidad</a>.</span>
           </label>
           <button class="btn" type="submit">Enviar mensaje</button>
           <p class="form__status" role="status" aria-live="polite"></p>
@@ -229,6 +230,7 @@
       </nav>
       <p>© <span id="year">2026</span> Salva Vidas · Acompañamiento en adicciones · Arcos de la Frontera (Cádiz)</p>
       <p class="footer__note">Esta web informa y orienta; no sustituye la atención médica ni de urgencias.</p>
+      <p class="footer__note"><a href="privacidad.html">Privacidad y aviso legal</a></p>
     </div>
   </footer>
 

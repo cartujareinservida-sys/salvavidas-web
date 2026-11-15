@@ -9,10 +9,20 @@
     toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
   });
 
+  function cerrarMenu() {
+    nav.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Abrir menú');
+  }
+
   nav.addEventListener('click', function (e) {
-    if (e.target.tagName === 'A') {
-      nav.classList.remove('is-open');
-      toggle.setAttribute('aria-expanded', 'false');
+    if (e.target.closest('a')) cerrarMenu();
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && nav.classList.contains('is-open')) {
+      cerrarMenu();
+      toggle.focus();
     }
   });
 
@@ -57,7 +67,7 @@
       window.location.href = 'mailto:' + form.dataset.mailto +
         '?subject=' + encodeURIComponent('Consulta desde la web') +
         '&body=' + encodeURIComponent(body);
-      setStatus('Se ha abierto tu programa de correo para enviar el mensaje.', 'ok');
+      setStatus('Se abrirá tu programa de correo con el mensaje listo para enviar. Si no se abre, escríbeme por WhatsApp o llámame al 604 887 687.', 'ok');
       return;
     }
 

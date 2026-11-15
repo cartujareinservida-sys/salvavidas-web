@@ -52,7 +52,14 @@ Marca: **Salva Vidas**. Diseño limpio, de dos colores: azul marino y blanco.
 
 ## Código y rendimiento
 
-- Web estática: `index.html`, `styles.css` y `script.js`. Solo HTML, CSS y JS puros, sin frameworks ni librerías.
+- Web estática: `index.html`, `styles.css`, `script.js` y `privacidad.html`. Solo HTML, CSS y JS puros, sin frameworks ni librerías.
+- Asistente propio (alternativa gratuita a ManyChat), ver `README.md`:
+  - `bot/engine.mjs`: motor común a web, Instagram y WhatsApp. Sin red ni almacenamiento.
+  - `bot/flows.json`: flujos (pasos, botones, palabras clave, señales de crisis). Se edita con `bot/editor.html`.
+  - `bot/widget.js`: chat de la web; carga motor y flujos solo al abrirse. Guarda la conversación solo en `sessionStorage`.
+  - `bot-servidor/worker.js`: Cloudflare Worker para Instagram (DM y comentarios con palabra clave) y WhatsApp Cloud API.
+  - Pruebas: `npm test`. Mantenerlas en verde al cambiar motor, flujos o servidor.
+  - El paso de crisis (112 y 024) debe existir siempre y saltar con las señales de crisis en cualquier momento. Botones de 20 caracteres como máximo.
 - Secciones: portada con botón de llamada, servicios en tarjetas, galería de 6 fotos y formulario de contacto.
 - SEO técnico: un solo H1, jerarquía H1>H2>H3, title y description únicos, alt descriptivo en toda imagen, schema.org `ProfessionalService` en `<head>`, `sitemap.xml` y `robots.txt`. Mantenerlo al añadir contenido.
 - Prioridad: velocidad de carga. Iconos SVG en línea, JS con `defer`, imágenes WebP pequeñas con `width`/`height` y `loading="lazy"`.
@@ -73,5 +80,7 @@ Marca: **Salva Vidas**. Diseño limpio, de dos colores: azul marino y blanco.
 - [ ] Servicio de formularios para el contacto (ahora abre el correo del visitante)
 - [ ] Logo y fotos propias
 - [ ] Tarifas o modalidades
-- [ ] Comprar el dominio salvavidasadicciones.es y volver a crear el archivo `CNAME` (se quitó para publicar en https://cartujareinservida-sys.github.io/salvavidas-web/)
+- [ ] Comprar el dominio salvavidasadicciones.es y volver a crear el archivo `CNAME` (se quitó para publicar en https://cartujareinservida-sys.github.io/salvavidas-web/). Al hacerlo, cambiar la dirección github.io por la del dominio en `index.html` (canonical, og:url, schema), `privacidad.html`, `sitemap.xml`, `robots.txt` y `FLOWS_URL` de `bot-servidor/wrangler.toml`
+- [ ] Datos del titular (nombre completo, NIF) en `privacidad.html`
+- [ ] Poner en marcha el servidor del asistente para Instagram/WhatsApp (`bot-servidor/README.md`) y pasar la revisión de la app de Meta
 - [ ] Imagen para compartir en redes (og:image, 1200×630)

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Editor del asistente | Salva Vidas</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#1A365D">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231A365D'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='700' font-size='16' fill='white' text-anchor='middle'%3ESV%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    body { background: var(--navy-soft); }
+    .ed-top { position: sticky; top: 0; z-index: 20; display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; padding: .75rem 16px; background: var(--navy); color: var(--white); }
+    .ed-top h1 { margin: 0 auto 0 0; color: var(--white); font-size: 1.15rem; }
+    .ed-top .btn { padding: .55rem 1rem; font-size: .9rem; }
+    .ed-status { width: 100%; margin: 0; font-size: .85rem; opacity: .9; }
+    .ed { display: grid; grid-template-columns: 240px minmax(0, 1fr) 380px; gap: 1rem; padding: 1rem 16px; align-items: start; }
+    .ed-panel { background: var(--white); border-radius: var(--radius); padding: 1rem; box-shadow: 0 2px 8px rgba(26, 54, 93, .06); }
+    .ed-tabs { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 1rem; }
+    .ed-tabs button, .ed-list button { font: inherit; cursor: pointer; }
+    .ed-tabs button { padding: .4rem .8rem; border: 2px solid var(--navy); border-radius: 999px; background: var(--white); color: var(--navy); font-weight: 600; font-size: .9rem; }
+    .ed-tabs button[aria-pressed="true"] { background: var(--navy); color: var(--white); }
+    .ed-list { list-style: none; margin: 0 0 1rem; padding: 0; max-height: 60vh; overflow: auto; }
+    .ed-list button { display: block; width: 100%; text-align: left; padding: .5rem .6rem; border: 0; border-radius: 8px; background: none; color: var(--text); }
+    .ed-list button:hover { background: var(--navy-soft); }
+    .ed-list button[aria-current="true"] { background: var(--navy); color: var(--white); }
+    .ed-list small { display: block; opacity: .75; font-size: .78rem; }
+    .ed h2 { font-size: 1.2rem; margin: 0 0 .75rem; }
+    .ed h3 { font-size: 1rem; margin: 1.5rem 0 .5rem; }
+    .ed label { display: block; font-weight: 600; color: var(--navy); margin: .75rem 0 .3rem; font-size: .92rem; }
+    .ed input[type=text], .ed textarea, .ed select { width: 100%; padding: .55rem .7rem; border: 1px solid #cbd5e1; border-radius: 8px; font: inherit; font-size: .95rem; color: var(--text); background: var(--white); }
+    .ed textarea { min-height: 84px; resize: vertical; }
+    .ed-help { margin: .3rem 0 0; color: var(--muted); font-size: .85rem; }
+    .ed-row { display: grid; gap: .5rem; align-items: start; padding: .75rem; margin-bottom: .5rem; border: 1px solid var(--navy-soft); border-radius: 10px; }
+    .ed-row--btn { grid-template-columns: 1.1fr .9fr 1.4fr auto; }
+    .ed-row--msg { grid-template-columns: 1fr auto; }
+    .ed-row--kw { grid-template-columns: 1.5fr 1fr auto; }
+    .ed-row label { margin: 0 0 .2rem; font-size: .8rem; }
+    .ed-tools { display: flex; flex-direction: column; gap: .25rem; }
+    .ed-mini { padding: .3rem .55rem; border: 1px solid #cbd5e1; border-radius: 6px; background: var(--white); color: var(--navy); font: 600 .85rem/1.2 var(--font); cursor: pointer; }
+    .ed-mini:hover { background: var(--navy-soft); }
+    .ed-mini--danger { color: #b91c1c; }
+    .ed-count { font-weight: 400; color: var(--muted); }
+    .ed-count.is-over { color: #b91c1c; font-weight: 700; }
+    .ed-radios { display: flex; flex-wrap: wrap; gap: .4rem 1rem; }
+    .ed-radios label { display: inline-flex; gap: .35rem; align-items: center; margin: 0; font-weight: 500; color: var(--text); }
+    .ed-issues { list-style: none; padding: 0; margin: 0; }
+    .ed-issues li { padding: .55rem .75rem; margin-bottom: .4rem; border-radius: 8px; background: var(--navy-soft); font-size: .92rem; }
+    .ed-issues li.is-error { background: #fdecec; color: #8a1414; }
+    .ed-preview { position: sticky; top: 120px; height: calc(100vh - 140px); min-height: 480px; display: flex; flex-direction: column; gap: .5rem; padding: .75rem; }
+    .ed-preview .chat { flex: 1; min-height: 0; }
+    .ed-preview-actions { display: flex; gap: .5rem; flex-wrap: wrap; }
+    .ed-hidden { display: none !important; }
+    @media (max-width: 1100px) {
+      .ed { grid-template-columns: 220px minmax(0, 1fr); }
+      .ed-preview { grid-column: 1 / -1; position: static; height: 620px; }
+    }
+    @media (max-width: 720px) {
+      .ed { grid-template-columns: 1fr; }
+      .ed-row--btn, .ed-row--kw { grid-template-columns: 1fr; }
+      .ed-tools { flex-direction: row; }
+    }
+  </style>
+  <script src="widget.js" data-mode="embed" defer></script>
+  <script type="module" src="editor.js"></script>
+</head>
+<body>
+  <header class="ed-top">
+    <h1>Editor del asistente</h1>
+    <button class="btn btn--light" type="button" id="descargar">Descargar flows.json</button>
+    <label class="btn btn--ghost" for="importar" style="margin:0">Importar…</label>
+    <input class="ed-hidden" type="file" id="importar" accept="application/json,.json">
+    <button class="btn btn--ghost" type="button" id="restaurar">Volver a lo publicado</button>
+    <p class="ed-status" id="estado" role="status" aria-live="polite">Cargando…</p>
+  </header>
+
+  <div class="ed">
+    <nav class="ed-panel" aria-label="Secciones del editor">
+      <div class="ed-tabs" role="group" aria-label="Sección">
+        <button type="button" data-tab="pasos" aria-pressed="true">Pasos</button>
+        <button type="button" data-tab="claves" aria-pressed="false">Palabras clave</button>
+        <button type="button" data-tab="ajustes" aria-pressed="false">Ajustes</button>
+        <button type="button" data-tab="revisar" aria-pressed="false">Revisar <span id="num-problemas"></span></button>
+      </div>
+      <ul class="ed-list" id="lista-pasos"></ul>
+      <button class="btn btn--small" type="button" id="nuevo-paso">+ Nuevo paso</button>
+    </nav>
+
+    <main class="ed-panel" id="zona" aria-live="off"></main>
+
+    <aside class="ed-panel ed-preview" aria-label="Vista previa">
+      <div class="ed-preview-actions">
+        <button class="ed-mini" type="button" id="probar-inicio">↻ Probar desde el inicio</button>
+        <button class="ed-mini" type="button" id="probar-paso">▶ Probar este paso</button>
+      </div>
+      <section class="chat chat--embedded" id="preview"></section>
+    </aside>
+  </div>
+</body>
+</html>

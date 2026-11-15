@@ -1,0 +1,235 @@
+{
+  "meta": {
+    "name": "Asistente de Salva Vidas",
+    "version": 1,
+    "updated": "2026-11-15"
+  },
+  "settings": {
+    "botName": "Asistente de Salva Vidas",
+    "startNode": "inicio",
+    "fallbackNode": "no_entiendo",
+    "crisisNode": "crisis",
+    "whatsapp": "34604887687",
+    "phone": "34604887687",
+    "email": "salvadorreinservida@icloud.com",
+    "invalidInputMessage": "No lo he entendido bien. ¿Puedes escribirlo otra vez?",
+    "commentReply": "Te acabo de escribir por mensaje privado 💙",
+    "restartKeywords": ["menu", "inicio", "empezar", "volver"],
+    "crisisKeywords": [
+      "suicid*",
+      "matarme",
+      "me quiero matar",
+      "me voy a matar",
+      "quitarme la vida",
+      "quitar la vida",
+      "me quiero morir",
+      "quiero morir*",
+      "morirme",
+      "no quiero vivir",
+      "no quiero seguir viviendo",
+      "la pena vivir",
+      "quiero desaparecer",
+      "acabar con todo",
+      "hacerme daño",
+      "autolesion*",
+      "sobredosis",
+      "urgencia",
+      "emergencia"
+    ]
+  },
+  "triggers": [
+    { "keywords": ["familia", "familiar", "mi hijo", "mi hija", "mi pareja", "mi marido", "mi mujer", "mi novio", "mi novia", "mi padre", "mi madre", "mi hermano", "mi hermana"], "node": "familia" },
+    { "keywords": ["charla*", "taller*", "colegio", "instituto", "empresa", "asociacion"], "node": "charlas" },
+    { "keywords": ["recaida*", "recai*"], "node": "info_recaidas" },
+    { "keywords": ["codependen*"], "node": "info_codependencia" },
+    { "keywords": ["llamar", "llamame", "telefono", "whatsapp", "hablar", "cita", "precio*", "tarifa*"], "node": "hablar" },
+    { "keywords": ["info", "informacion"], "node": "info" },
+    { "keywords": ["ayuda", "alcohol", "beber", "bebo", "droga*", "cocaina", "porro*", "cannabis", "apuesta*", "juego", "consum*", "adiccion", "adicto"], "node": "persona" },
+    { "keywords": ["hola", "buenas", "buenos dias", "buenas tardes"], "node": "inicio" }
+  ],
+  "commentTriggers": [
+    { "keywords": ["familia"], "node": "familia" },
+    { "keywords": ["ayuda"], "node": "persona" },
+    { "keywords": ["charla*"], "node": "charlas" },
+    { "keywords": ["info"], "node": "info" }
+  ],
+  "nodes": {
+    "inicio": {
+      "messages": [
+        "Hola 👋 Soy el asistente de Salva Vidas. Estoy aquí para ayudarte a dar el primer paso, sin juicios.",
+        "No necesitas darme tus datos para que te oriente. ¿Qué te trae por aquí?"
+      ],
+      "buttons": [
+        { "label": "Tengo un problema", "next": "persona" },
+        { "label": "Soy familiar", "next": "familia" },
+        { "label": "Quiero información", "next": "info" },
+        { "label": "Charlas para centros", "next": "charlas" },
+        { "label": "Es una urgencia", "next": "crisis" }
+      ]
+    },
+    "persona": {
+      "messages": [
+        "Gracias por escribir. Pedir ayuda es lo más difícil, y ya lo estás haciendo.",
+        "Salva, quien está detrás de este proyecto, también es adicto en recuperación. Sabe lo que es sentir que no hay salida, y sabe que la hay.",
+        "¿Con qué te está costando más?"
+      ],
+      "buttons": [
+        { "label": "Alcohol", "next": "persona_sustancia" },
+        { "label": "Otras sustancias", "next": "persona_sustancia" },
+        { "label": "Juego o apuestas", "next": "persona_conducta" },
+        { "label": "Móvil o pantallas", "next": "persona_conducta" },
+        { "label": "Prefiero no decirlo", "next": "persona_pasos" }
+      ]
+    },
+    "persona_sustancia": {
+      "messages": [
+        "Entendido. Con el alcohol y otras sustancias, dejarlo de golpe puede tener riesgos para la salud. Por eso es importante que también lo hables con tu médico o tu centro de salud."
+      ],
+      "next": "persona_pasos"
+    },
+    "persona_conducta": {
+      "messages": [
+        "Las adicciones sin sustancia son igual de reales y también tienen tratamiento. Lo importante no es el qué, sino cómo te está afectando."
+      ],
+      "next": "persona_pasos"
+    },
+    "persona_pasos": {
+      "messages": [
+        "Así puede acompañarte Salva:\n• Una primera conversación, confidencial y sin compromiso.\n• Seguimiento cercano, en los días buenos y en los difíciles.\n• Orientación sobre recursos y tratamientos, públicos y privados.",
+        "¿Cómo prefieres seguir?"
+      ],
+      "buttons": [
+        { "label": "Hablar por WhatsApp", "action": "whatsapp", "text": "Hola Salva, te escribo desde la web. Me gustaría hablar contigo sobre mi situación." },
+        { "label": "Llamar a Salva", "action": "call" },
+        { "label": "Que me llame Salva", "next": "pedir_nombre" },
+        { "label": "Volver al inicio", "next": "inicio" }
+      ]
+    },
+    "familia": {
+      "messages": [
+        "Gracias por escribir. Cuando alguien a quien quieres tiene una adicción, toda la familia lo vive. Y tú también mereces apoyo.",
+        "Algunas ideas que ayudan desde hoy:\n• No es culpa tuya, ni está en tu mano controlarlo.\n• Habla en momentos de calma, no justo después de un consumo.\n• Poner límites también es cuidar.\n• Busca apoyo para ti: no tienes que cargar con todo.",
+        "¿Quieres que lo hablemos con calma?"
+      ],
+      "buttons": [
+        { "label": "Hablar por WhatsApp", "action": "whatsapp", "text": "Hola Salva, te escribo desde la web. Soy familiar de una persona con adicción y me gustaría orientación." },
+        { "label": "Que me llame Salva", "next": "pedir_nombre" },
+        { "label": "Codependencia", "next": "info_codependencia" },
+        { "label": "Volver al inicio", "next": "inicio" }
+      ]
+    },
+    "charlas": {
+      "messages": [
+        "Salva da charlas terapéuticas para personas con adicción y para familiares, y charlas de prevención en centros educativos, empresas y asociaciones.",
+        "Cuéntame: ¿para qué centro u organización sería?"
+      ],
+      "input": { "var": "organizacion", "next": "charlas_2" }
+    },
+    "charlas_2": {
+      "messages": [
+        "Perfecto. Escribe a Salva por WhatsApp o por correo y veis juntos la fecha, el formato y el público."
+      ],
+      "buttons": [
+        { "label": "Hablar por WhatsApp", "action": "whatsapp", "text": "Hola Salva, te escribo desde la web. Me interesa una charla para: {{organizacion}}." },
+        { "label": "Enviar un correo", "action": "email", "subject": "Charla para {{organizacion}}", "text": "Hola Salva, me interesa una charla para: {{organizacion}}." },
+        { "label": "Volver al inicio", "next": "inicio" }
+      ]
+    },
+    "info": {
+      "messages": ["¿Sobre qué te gustaría saber más?"],
+      "buttons": [
+        { "label": "Primeros pasos", "next": "info_pasos" },
+        { "label": "Recaídas", "next": "info_recaidas" },
+        { "label": "Codependencia", "next": "info_codependencia" },
+        { "label": "Sin sustancia", "next": "info_sinsustancia" },
+        { "label": "Volver al inicio", "next": "inicio" }
+      ]
+    },
+    "info_pasos": {
+      "messages": [
+        "Primeros pasos:\n1. Reconocer que algo no va bien. Eso ya es mucho.\n2. Contárselo a alguien de confianza.\n3. Pedir cita en tu centro de salud: pueden derivarte a los servicios públicos de adicciones, que son gratuitos.\n4. Buscar acompañamiento. No hace falta hacerlo en soledad."
+      ],
+      "next": "info_mas"
+    },
+    "info_recaidas": {
+      "messages": [
+        "Una recaída no borra todo lo que has avanzado. Forma parte del camino de muchas personas.",
+        "Lo importante es pedir ayuda pronto, sin vergüenza, y revisar qué la provocó: cansancio, emociones, lugares, personas…"
+      ],
+      "next": "info_mas"
+    },
+    "info_codependencia": {
+      "messages": [
+        "La codependencia es cuando tu vida empieza a girar alrededor de la adicción de otra persona: vigilar, rescatar, tapar, sentir culpa.",
+        "No es falta de amor: es agotamiento. Y tiene salida, aprendiendo a cuidarte y a poner límites sanos."
+      ],
+      "next": "info_mas"
+    },
+    "info_sinsustancia": {
+      "messages": [
+        "También hay adicciones sin sustancia: juego y apuestas, compras, móvil y pantallas, videojuegos…",
+        "Funcionan de forma parecida en el cerebro y también tienen tratamiento."
+      ],
+      "next": "info_mas"
+    },
+    "info_mas": {
+      "messages": ["¿Quieres saber algo más?"],
+      "buttons": [
+        { "label": "Otro tema", "next": "info" },
+        { "label": "Hablar con Salva", "next": "hablar" },
+        { "label": "Volver al inicio", "next": "inicio" }
+      ]
+    },
+    "hablar": {
+      "messages": [
+        "Puedes escribir o llamar a Salva. Te responderá lo antes posible, y la primera conversación es sin compromiso."
+      ],
+      "buttons": [
+        { "label": "Hablar por WhatsApp", "action": "whatsapp", "text": "Hola Salva, te escribo desde la web." },
+        { "label": "Llamar a Salva", "action": "call" },
+        { "label": "Que me llame Salva", "next": "pedir_nombre" },
+        { "label": "Volver al inicio", "next": "inicio" }
+      ]
+    },
+    "pedir_nombre": {
+      "messages": ["Claro. ¿Cómo te llamas? Basta con tu nombre de pila."],
+      "input": { "var": "nombre", "next": "pedir_hora" }
+    },
+    "pedir_hora": {
+      "messages": ["Gracias, {{nombre}}. ¿Cuándo te viene mejor que te llame? Por ejemplo: por las tardes."],
+      "input": { "var": "hora", "next": "pedir_enviar" }
+    },
+    "pedir_enviar": {
+      "messages": [
+        "Último paso: pulsa el botón y se abrirá WhatsApp con el mensaje ya escrito. Solo tienes que enviarlo y Salva te llamará."
+      ],
+      "buttons": [
+        { "label": "Enviar por WhatsApp", "action": "whatsapp", "text": "Hola Salva, soy {{nombre}}. Me gustaría que me llamaras. Me viene mejor: {{hora}}." },
+        { "label": "Volver al inicio", "next": "inicio" }
+      ]
+    },
+    "crisis": {
+      "messages": [
+        "Si tu vida o la de otra persona corre peligro, llama ahora al 112.",
+        "Si tienes pensamientos de suicidio, llama al 024: es gratuito, confidencial y atiende las 24 horas.",
+        "No tienes por qué pasar por esto en soledad. Pedir ayuda es un acto de valentía."
+      ],
+      "buttons": [
+        { "label": "Llamar al 112", "url": "tel:112" },
+        { "label": "Llamar al 024", "url": "tel:024" },
+        { "label": "Seguir hablando", "next": "inicio" }
+      ]
+    },
+    "no_entiendo": {
+      "messages": [
+        "Perdona, soy un asistente sencillo y no siempre entiendo lo que escribes. Elige una opción o escribe «menú»."
+      ],
+      "buttons": [
+        { "label": "Tengo un problema", "next": "persona" },
+        { "label": "Soy familiar", "next": "familia" },
+        { "label": "Quiero información", "next": "info" },
+        { "label": "Hablar con Salva", "next": "hablar" }
+      ]
+    }
+  }
+}

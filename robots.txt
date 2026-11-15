@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /salvavidas-web/bot/editor.html
 
-Sitemap: https://www.salvavidasadicciones.es/sitemap.xml
+Sitemap: https://cartujareinservida-sys.github.io/salvavidas-web/sitemap.xml

@@ -1,0 +1,23 @@
+# Configuración del servidor del asistente en Cloudflare Workers (plan gratuito).
+# Pasos completos en bot-servidor/README.md
+name = "salvavidas-bot"
+main = "worker.js"
+compatibility_date = "2026-11-01"
+
+[vars]
+# Los flujos que edita el editor web. Si cambias de dominio, cambia esta dirección.
+FLOWS_URL = "https://cartujareinservida-sys.github.io/salvavidas-web/bot/flows.json"
+
+# Donde se guarda en qué paso va cada conversación (se borra a los 30 días).
+# Crea el espacio con:  npx wrangler kv namespace create SESIONES
+# y pega aquí el id que te devuelva.
+[[kv_namespaces]]
+binding = "SESIONES"
+id = "PEGA_AQUI_EL_ID"
+
+# Las claves secretas NO van aquí. Se guardan con:
+#   npx wrangler secret put VERIFY_TOKEN   (una palabra que inventas tú)
+#   npx wrangler secret put APP_SECRET     (clave secreta de la app de Meta)
+#   npx wrangler secret put IG_TOKEN       (token de Instagram)
+#   npx wrangler secret put WA_TOKEN       (token de WhatsApp, opcional)
+#   npx wrangler secret put WA_PHONE_ID    (identificador del número de WhatsApp, opcional)

@@ -1,3 +1,7 @@
-# Configuración de GitHub Pages: no publicar las notas internas
+# Configuración de GitHub Pages: no publicar las notas internas ni el código del servidor
 exclude:
   - CLAUDE.md
+  - README.md
+  - bot-servidor
+  - tests
+  - package.json

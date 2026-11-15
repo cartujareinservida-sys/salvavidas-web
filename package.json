@@ -1,0 +1,10 @@
+{
+  "name": "salvavidas-web",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "bot:local": "cd bot-servidor && npx wrangler dev",
+    "bot:publicar": "cd bot-servidor && npx wrangler deploy"
+  }
+}
