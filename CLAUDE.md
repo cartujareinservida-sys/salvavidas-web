@@ -4,7 +4,7 @@ Contexto del proyecto para Claude Code. Léelo antes de trabajar en este reposit
 
 ## Quién está detrás
 
-**Especialista en adicciones y terapeuta**, que además es **adicto en recuperación rehabilitado**. Esa doble mirada, la profesional y la vivida en primera persona, es el corazón del proyecto: se cuenta con naturalidad, como fuente de credibilidad y esperanza.
+**Especialista en adicciones**, que conoce la adicción también desde la experiencia propia («yo estuve ahí»). Esa doble mirada es el corazón del proyecto: se cuenta con naturalidad y sin detalles, como fuente de credibilidad y esperanza.
 
 ## Qué hace
 
@@ -23,7 +23,7 @@ Contexto del proyecto para Claude Code. Léelo antes de trabajar en este reposit
 
 - **Cálido, cercano, honesto y sin juicios.** Tuteo por defecto.
 - Esperanza realista: "la recuperación es posible", sin promesas ni garantías de resultados.
-- El autor se define como "adicto en recuperación"; respetar esa voz cuando habla de sí mismo. Para el público en general, lenguaje no estigmatizante: "persona con adicción", "consumo problemático", "en recuperación" (evitar "drogadicto", "yonqui", "vicio", "limpio/sucio").
+- Cuando el autor habla de sí mismo, usar «yo estuve ahí» (no poner «en recuperación» referido a él). Para el público en general, lenguaje no estigmatizante: "persona con adicción", "consumo problemático", "en recuperación" (evitar "drogadicto", "yonqui", "vicio", "limpio/sucio").
 - Frases cortas y claras, pensadas para alguien que puede estar en un momento de crisis.
 - Imágenes luminosas y humanas (naturaleza, manos, caminos, personas en calma). Nada morboso: ni jeringuillas, ni pastillas, ni personas derrumbadas.
 
