@@ -113,7 +113,7 @@
         if (b.url) {
           n = el('a', 'chat__choice chat__choice--link', b.label);
           n.href = b.url;
-          if (!/^(tel|mailto):/.test(b.url)) { n.target = '_blank'; n.rel = 'noopener'; }
+          if (/^https?:/.test(b.url)) { n.target = '_blank'; n.rel = 'noopener'; }
         } else {
           n = el('button', 'chat__choice', b.label);
           n.type = 'button';
