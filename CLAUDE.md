@@ -81,6 +81,6 @@ Marca: **Salva González · Acompañamiento en adicciones** (la marca «Salva Vi
 - [ ] Logo y fotos propias
 - [ ] Tarifas o modalidades
 - [ ] Comprar el dominio salvagonzalezadicciones.es (salvavidasadicciones.es es para la otra web) y volver a crear el archivo `CNAME` (se quitó para publicar en https://cartujareinservida-sys.github.io/salvavidas-web/). Al hacerlo, cambiar la dirección github.io por la del dominio en `index.html` (canonical, og:url, schema), `privacidad.html`, `sitemap.xml`, `robots.txt` y `FLOWS_URL` de `bot-servidor/wrangler.toml`
-- [ ] Datos del titular (nombre completo, NIF) en `privacidad.html`
+- [x] Datos del titular (nombre completo, NIF) en `privacidad.html`
 - [ ] Poner en marcha el servidor del asistente para Instagram/WhatsApp (`bot-servidor/README.md`) y pasar la revisión de la app de Meta
 - [ ] Imagen para compartir en redes (og:image, 1200×630)
