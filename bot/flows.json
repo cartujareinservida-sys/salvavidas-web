@@ -120,7 +120,7 @@
     },
     "charlas": {
       "messages": [
-        "Salva da charlas terapéuticas para personas con adicción y para familiares, y charlas de prevención en centros educativos, empresas y asociaciones.",
+        "Salva da charlas y grupos de apoyo para personas con adicción y para familiares, y charlas de prevención en centros educativos, empresas y asociaciones.",
         "Cuéntame: ¿para qué centro u organización sería?"
       ],
       "input": { "var": "organizacion", "next": "charlas_2" }

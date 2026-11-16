@@ -11,7 +11,7 @@ Contexto del proyecto para Claude Code. Léelo antes de trabajar en este reposit
 1. **Acompaña**: seguimiento cercano de personas en proceso de recuperación.
 2. **Asesora**: orientación a personas con adicción y a sus familias (primeros pasos, recursos, tratamientos, cómo actuar).
 3. **Informa**: divulgación sobre adicciones (con y sin sustancia), recaídas, codependencia, prevención.
-4. **Charlas terapéuticas**: para personas con adicción y para **familiares**; posible ampliación a centros educativos, empresas y asociaciones.
+4. **Charlas y grupos de apoyo**: para personas con adicción y para **familiares**; posible ampliación a centros educativos, empresas y asociaciones.
 
 ## A quién se dirige
 
@@ -75,12 +75,12 @@ Marca: **Salva González · Acompañamiento en adicciones** (la marca «Salva Vi
 ## Datos pendientes
 
 - [ ] Formación y titulaciones
-- Web: https://www.salvavidasadicciones.es · Zona: Arcos de la Frontera (Cádiz)
+- Web: https://www.salvagonzalezadicciones.es (pendiente de comprar) · Zona: Arcos de la Frontera (Cádiz)
 - Contacto: teléfono y WhatsApp 604 887 687 · salvadorreinservida@icloud.com · Instagram y TikTok @salva.vidas.adicciones
 - [ ] Servicio de formularios para el contacto (ahora abre el correo del visitante)
 - [ ] Logo y fotos propias
 - [ ] Tarifas o modalidades
-- [ ] Comprar el dominio salvavidasadicciones.es y volver a crear el archivo `CNAME` (se quitó para publicar en https://cartujareinservida-sys.github.io/salvavidas-web/). Al hacerlo, cambiar la dirección github.io por la del dominio en `index.html` (canonical, og:url, schema), `privacidad.html`, `sitemap.xml`, `robots.txt` y `FLOWS_URL` de `bot-servidor/wrangler.toml`
+- [ ] Comprar el dominio salvagonzalezadicciones.es (salvavidasadicciones.es es para la otra web) y volver a crear el archivo `CNAME` (se quitó para publicar en https://cartujareinservida-sys.github.io/salvavidas-web/). Al hacerlo, cambiar la dirección github.io por la del dominio en `index.html` (canonical, og:url, schema), `privacidad.html`, `sitemap.xml`, `robots.txt` y `FLOWS_URL` de `bot-servidor/wrangler.toml`
 - [ ] Datos del titular (nombre completo, NIF) en `privacidad.html`
 - [ ] Poner en marcha el servidor del asistente para Instagram/WhatsApp (`bot-servidor/README.md`) y pasar la revisión de la app de Meta
 - [ ] Imagen para compartir en redes (og:image, 1200×630)
