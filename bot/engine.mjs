@@ -1,5 +1,5 @@
 /*
- * Motor de conversación de Salva Vidas.
+ * Motor de conversación del asistente de Salva González.
  *
  * Es el mismo para los tres canales (chat de la web, Instagram y WhatsApp):
  * recibe el estado de la conversación y lo que escribe o pulsa la persona,

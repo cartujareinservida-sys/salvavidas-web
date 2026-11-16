@@ -1,5 +1,5 @@
 /*
- * Chat de Salva Vidas para la web.
+ * Chat de Salva González para la web.
  *
  * Al cargar la página solo pinta el botón "¿Hablamos?". El motor y los flujos
  * se descargan la primera vez que alguien abre el chat, para no frenar la web.
@@ -49,7 +49,7 @@
     var listo = null;
     var ronda = 0; // cambia al reiniciar: los mensajes pendientes de antes se descartan
 
-    var titulo = el('p', 'chat__title', 'Asistente de Salva Vidas');
+    var titulo = el('p', 'chat__title', 'Asistente de Salva');
     titulo.id = 'chat-title-' + Math.random().toString(36).slice(2, 8);
     contenedor.setAttribute('aria-labelledby', titulo.id);
 
@@ -247,7 +247,7 @@
         return decir(motor.iniciar(flujo));
       }).catch(function (e) {
         listo = null;
-        if (window.console) console.error('Chat Salva Vidas:', e);
+        if (window.console) console.error('Chat Salva González:', e);
         error();
       });
       return listo;

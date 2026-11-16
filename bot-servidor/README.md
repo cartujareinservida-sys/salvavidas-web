@@ -53,7 +53,7 @@ Es tu propio "ManyChat". Responde automáticamente a los mensajes privados de In
    npx wrangler deploy
    ```
 
-   Te dará una dirección del tipo `https://salvavidas-bot.TU-USUARIO.workers.dev`. Si la abres y ves «Asistente de Salva Vidas: funcionando», está bien.
+   Te dará una dirección del tipo `https://salvavidas-bot.TU-USUARIO.workers.dev`. Si la abres y ves «Asistente de Salva: funcionando», está bien.
 
 ### 2. Conectar Instagram
 

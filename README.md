@@ -1,4 +1,4 @@
-# Salva Vidas · web y asistente
+# Salva González · Acompañamiento en adicciones · web y asistente
 
 - `index.html`, `styles.css`, `script.js`: la web (GitHub Pages).
 - `privacidad.html`: privacidad y aviso legal.

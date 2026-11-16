@@ -1,5 +1,5 @@
 /*
- * Servidor del asistente de Salva Vidas para Instagram y WhatsApp.
+ * Servidor del asistente de Salva para Instagram y WhatsApp.
  * Funciona en Cloudflare Workers (plan gratuito). Ver README.md de esta carpeta.
  *
  * Qué hace:
@@ -281,7 +281,7 @@ export default {
     var url = new URL(request.url);
 
     if (url.pathname !== '/webhook') {
-      return respuesta('Asistente de Salva Vidas: funcionando.');
+      return respuesta('Asistente de Salva: funcionando.');
     }
 
     // Meta comprueba la dirección al configurar el webhook.

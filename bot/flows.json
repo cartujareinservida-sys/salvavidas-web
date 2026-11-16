@@ -1,11 +1,11 @@
 {
   "meta": {
-    "name": "Asistente de Salva Vidas",
+    "name": "Asistente de Salva",
     "version": 1,
     "updated": "2026-11-15"
   },
   "settings": {
-    "botName": "Asistente de Salva Vidas",
+    "botName": "Asistente de Salva",
     "startNode": "inicio",
     "fallbackNode": "no_entiendo",
     "crisisNode": "crisis",
@@ -56,7 +56,7 @@
   "nodes": {
     "inicio": {
       "messages": [
-        "Hola 👋 Soy el asistente de Salva Vidas. Estoy aquí para ayudarte a dar el primer paso, sin juicios.",
+        "Hola 👋 Soy el asistente de Salva. Estoy aquí para ayudarte a dar el primer paso, sin juicios.",
         "No necesitas darme tus datos para que te oriente. ¿Qué te trae por aquí?"
       ],
       "buttons": [

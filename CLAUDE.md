@@ -29,7 +29,7 @@ Contexto del proyecto para Claude Code. Léelo antes de trabajar en este reposit
 
 ## Identidad visual
 
-Marca: **Salva Vidas**. Diseño limpio, de dos colores: azul marino y blanco.
+Marca: **Salva González · Acompañamiento en adicciones** (la marca «Salva Vidas» se reserva para otra web). Diseño limpio, de dos colores: azul marino y blanco.
 
 ### Paleta de colores
 
